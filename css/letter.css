@@ -4,155 +4,69 @@
 
 .letter{
 
-    background:
+    background:linear-gradient(180deg,#fff5f7,#ffeef3);
 
-    linear-gradient(
-        180deg,
-        #fff5f7,
-        #ffeef3
-    );
-
-}
-
-.letter-container{
-
-    display:flex;
-
-    justify-content:center;
-
-}
-
-.letter-paper{
-
-    max-width:850px;
-
-    background:#fffdf8;
-
-    padding:70px;
-
-    border-radius:20px;
-
-    box-shadow:
-
-        0 30px 60px rgba(0,0,0,.12);
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-/* Decorative corner */
-
-.letter-paper::before{
-
-    content:"💌";
-
-    position:absolute;
-
-    top:20px;
-
-    right:25px;
-
-    font-size:2rem;
-
-}
-
-.letter-date{
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    margin-bottom:25px;
-
-}
-
-.letter-paper h3{
-
-    font-family:var(--heading);
-
-    font-size:3rem;
-
-    color:var(--primary);
-
-    margin-bottom:35px;
-
-}
-
-.letter-paper p{
-
-    font-size:1.15rem;
-
-    line-height:2;
-
-    margin-bottom:25px;
-
-    text-align:justify;
-
-}
-
-.signature{
-
-    margin-top:60px;
-
-    text-align:right;
-
-    font-family:var(--heading);
-
-    font-size:2.4rem;
-
-    color:var(--primary);
-
-}
-
-.signature span{
-
-    display:block;
-
-    margin-top:15px;
-
-    font-size:3rem;
+    padding:120px 10%;
 
 }
 
 .envelope{
 
-    width:500px;
+    width:min(850px,95%);
 
-    margin:auto;
+    margin:50px auto;
 
     position:relative;
 
 }
 
+/* Envelope */
+
 .flap{
 
-    height:180px;
+    height:220px;
 
     background:#ff4f81;
 
     clip-path:polygon(0 0,100% 0,50% 100%);
 
-    transition:1s;
-
     transform-origin:top;
 
+    transition:1s ease;
+
+    position:relative;
+
+    z-index:2;
+
+    border-radius:12px 12px 0 0;
+
 }
+
+/* Letter */
 
 .paper{
 
-    background:white;
+    background:#fffdf8;
 
-    padding:50px;
+    padding:60px;
 
-    transform:translateY(-40px);
+    border-radius:0 0 20px 20px;
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+    transform:translateY(-160px);
 
     opacity:0;
 
-    transition:1s;
+    transition:1s ease;
+
+    position:relative;
+
+    z-index:1;
 
 }
+
+/* Open animation */
 
 .envelope.open .flap{
 
@@ -168,15 +82,67 @@
 
 }
 
+/* Typography */
+
+.paper h3{
+
+    font-family:var(--heading);
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:30px;
+
+}
+
+.paper p{
+
+    font-size:1.1rem;
+
+    line-height:2;
+
+    text-align:justify;
+
+    margin-bottom:25px;
+
+}
+
+/* Signature */
+
+.signature{
+
+    margin-top:60px;
+
+    text-align:right;
+
+    font-family:var(--heading);
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+.signature span{
+
+    display:block;
+
+    font-size:2.8rem;
+
+    margin-top:10px;
+
+}
+
 #signature{
 
     display:inline-block;
 
+    width:0;
+
     overflow:hidden;
 
     white-space:nowrap;
-
-    width:0;
 
     border-right:3px solid var(--primary);
 
@@ -185,9 +151,7 @@
 #signature.write{
 
     animation:
-
-    typing 3s steps(15,end) forwards,
-
-    blink .8s infinite;
+        typing 3s steps(15,end) forwards,
+        blink .8s infinite;
 
 }
