@@ -1,24 +1,29 @@
 function initializeLetter() {
 
-    const envelope = document.getElementById("envelope");
-    const paper = document.querySelector(".paper");
-    const button = document.getElementById("openLetter");
-    const signature = document.getElementById("signature");
+    const letter = document.querySelector(".letter-paper");
 
-    if (!envelope || !paper || !button || !signature) return;
+    if (!letter) return;
 
-    button.addEventListener("click", () => {
+    const observer = new IntersectionObserver((entries) => {
 
-        envelope.classList.add("open");
+        entries.forEach(entry => {
 
-        button.style.display = "none";
+            if (entry.isIntersecting) {
 
-        setTimeout(() => {
+                letter.classList.add("show");
 
-            signature.classList.add("write");
+                document
+                    .getElementById("signature")
+                    ?.classList.add("write");
 
-        }, 1500);
+            }
 
+        });
+
+    }, {
+        threshold: 0.25
     });
+
+    observer.observe(letter);
 
 }
