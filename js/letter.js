@@ -1,14 +1,18 @@
-function initializeLetter(){
+function initializeLetter() {
 
     const letter = document.querySelector(".letter-paper");
+    const envelope = document.getElementById("envelope");
+    const button = document.getElementById("openLetter");
+    const signature = document.getElementById("signature");
 
-    if(!letter) return;
+    if (!letter || !envelope || !button || !signature) return;
 
-    const observer = new IntersectionObserver((entries)=>{
+    // Fade in the section when it enters the screen
+    const observer = new IntersectionObserver((entries) => {
 
-        entries.forEach(entry=>{
+        entries.forEach(entry => {
 
-            if(entry.isIntersecting){
+            if (entry.isIntersecting) {
 
                 letter.classList.add("show");
 
@@ -16,35 +20,26 @@ function initializeLetter(){
 
         });
 
-    },{
-        threshold:0.25
+    }, {
+        threshold: 0.25
     });
 
     observer.observe(letter);
 
-}
-
-function initializeLetter(){
-
-    const button=document.getElementById("openLetter");
-
-    const envelope=document.getElementById("envelope");
-
-    button.addEventListener("click",()=>{
+    // Open the envelope
+    button.addEventListener("click", () => {
 
         envelope.classList.add("open");
 
-        button.style.display="none";
+        button.style.display = "none";
+
+        // Animate the signature after the letter opens
+        setTimeout(() => {
+
+            signature.classList.add("write");
+
+        }, 1200);
 
     });
 
 }
-
-setTimeout(()=>{
-
-    document
-    .getElementById("signature")
-    .classList
-    .add("write");
-
-},1200);
