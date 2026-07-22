@@ -1,0 +1,185 @@
+/* ==========================================
+   TIMELINE SECTION
+========================================== */
+
+.story{
+
+    background: var(--white);
+
+}
+
+.timeline{
+
+    position: relative;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+/* Vertical Line */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:4px;
+
+    height:100%;
+
+    background:linear-gradient(
+        to bottom,
+        #ff9eb5,
+        #ff4f81
+    );
+
+    border-radius:20px;
+
+}
+
+/* Timeline Item */
+
+.timeline-item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:30px 40px;
+
+}
+
+/* Left Side */
+
+.timeline-item:nth-child(odd){
+
+    left:0;
+
+    text-align:right;
+
+}
+
+/* Right Side */
+
+.timeline-item:nth-child(even){
+
+    left:50%;
+
+}
+
+/* Heart Icon */
+
+.timeline-item::after{
+
+    content:"❤";
+
+    position:absolute;
+
+    top:35px;
+
+    right:-18px;
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--white);
+
+    color:var(--primary);
+
+    font-size:1.2rem;
+
+    border-radius:50%;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.timeline-item:nth-child(even)::after{
+
+    left:-18px;
+
+}
+
+/* Card */
+
+.timeline-content{
+
+    background:var(--secondary);
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:all .35s ease;
+
+}
+
+/* Hover Effect */
+
+.timeline-content:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+/* Headings */
+
+.timeline-content h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+    font-size:1.4rem;
+
+}
+
+/* Paragraph */
+
+.timeline-content p{
+
+    line-height:1.8;
+
+    font-size:1rem;
+
+}
+
+/* Fade Animation */
+
+.timeline-content{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+}
+
+.timeline-content.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}

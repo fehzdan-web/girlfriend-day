@@ -1,0 +1,24 @@
+:root{
+
+    --primary:#ff4f81;
+    --primary-dark:#ff2967;
+
+    --secondary:#fff5f7;
+
+    --white:#ffffff;
+
+    --text:#333333;
+
+    --gold:#FFD700;
+
+    --shadow:0 15px 35px rgba(0,0,0,.1);
+
+    --radius:20px;
+
+    --transition:.4s;
+
+    --heading-font:"Great Vibes", cursive;
+
+    --body-font:"Poppins", sans-serif;
+
+}

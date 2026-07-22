@@ -1,0 +1,117 @@
+/* ===========================
+   LETTER
+=========================== */
+
+.letter{
+
+    background:
+
+    linear-gradient(
+        180deg,
+        #fff5f7,
+        #ffeef3
+    );
+
+}
+
+.letter-container{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.letter-paper{
+
+    max-width:850px;
+
+    background:#fffdf8;
+
+    padding:70px;
+
+    border-radius:20px;
+
+    box-shadow:
+
+        0 30px 60px rgba(0,0,0,.12);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Decorative corner */
+
+.letter-paper::before{
+
+    content:"💌";
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    font-size:2rem;
+
+}
+
+.letter-date{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.letter-paper h3{
+
+    font-family:var(--heading);
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:35px;
+
+}
+
+.letter-paper p{
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    margin-bottom:25px;
+
+    text-align:justify;
+
+}
+
+.signature{
+
+    margin-top:60px;
+
+    text-align:right;
+
+    font-family:var(--heading);
+
+    font-size:2.4rem;
+
+    color:var(--primary);
+
+}
+
+.signature span{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:3rem;
+
+}

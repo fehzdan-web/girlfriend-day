@@ -1,0 +1,124 @@
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (max-width:992px){
+
+    .hero-content h1{
+
+        font-size:3.2rem;
+
+    }
+
+    .hero-content h2{
+
+        font-size:3rem;
+
+    }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:20px;
+
+        border-radius:25px;
+
+    }
+
+    .navbar ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:18px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .hero-content h2{
+
+        font-size:2.4rem;
+
+    }
+
+    .hero-content p{
+
+        font-size:1rem;
+
+    }
+
+    .timeline::before{
+
+        left:20px;
+
+    }
+
+    .timeline-item{
+
+        width:100%;
+
+        left:0 !important;
+
+        padding-left:60px;
+
+        text-align:left !important;
+
+    }
+
+    .timeline-item::after{
+
+        left:8px !important;
+
+    }
+
+}
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+
+@media (max-width:480px){
+
+    .section{
+
+        padding:90px 25px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:2rem;
+
+    }
+
+    .hero-content h2{
+
+        font-size:2rem;
+
+    }
+
+    .btn,
+    .music-btn{
+
+        width:100%;
+
+    }
+
+}
