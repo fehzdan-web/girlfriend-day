@@ -67,3 +67,46 @@
 .navbar a:hover::after{
     width:100%;
 }
+
+.navbar a{
+
+    position:relative;
+
+    transition:.35s;
+
+}
+
+.navbar a.active{
+
+    color:#ff4f81;
+
+}
+
+.navbar a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    background:#ff4f81;
+
+    transition:.35s;
+
+    border-radius:20px;
+
+}
+
+.navbar a:hover::after,
+.navbar a.active::after{
+
+    width:100%;
+
+}

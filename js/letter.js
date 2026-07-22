@@ -23,3 +23,28 @@ function initializeLetter(){
     observer.observe(letter);
 
 }
+
+function initializeLetter(){
+
+    const button=document.getElementById("openLetter");
+
+    const envelope=document.getElementById("envelope");
+
+    button.addEventListener("click",()=>{
+
+        envelope.classList.add("open");
+
+        button.style.display="none";
+
+    });
+
+}
+
+setTimeout(()=>{
+
+    document
+    .getElementById("signature")
+    .classList
+    .add("write");
+
+},1200);

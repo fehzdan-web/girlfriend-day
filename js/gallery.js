@@ -35,3 +35,43 @@ function initializeGallery() {
     });
 
 }
+
+function initializeGallery(){
+
+    const photos=document.querySelectorAll(".gallery img");
+
+    const lightbox=document.getElementById("lightbox");
+
+    const image=document.getElementById("lightboxImage");
+
+    const close=document.getElementById("closeLightbox");
+
+    photos.forEach(photo=>{
+
+        photo.addEventListener("click",()=>{
+
+            image.src=photo.src;
+
+            lightbox.classList.add("show");
+
+        });
+
+    });
+
+    close.addEventListener("click",()=>{
+
+        lightbox.classList.remove("show");
+
+    });
+
+    lightbox.addEventListener("click",(e)=>{
+
+        if(e.target===lightbox){
+
+            lightbox.classList.remove("show");
+
+        }
+
+    });
+
+}

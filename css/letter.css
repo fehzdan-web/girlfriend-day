@@ -115,3 +115,79 @@
     font-size:3rem;
 
 }
+
+.envelope{
+
+    width:500px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.flap{
+
+    height:180px;
+
+    background:#ff4f81;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transition:1s;
+
+    transform-origin:top;
+
+}
+
+.paper{
+
+    background:white;
+
+    padding:50px;
+
+    transform:translateY(-40px);
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+.envelope.open .paper{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+#signature{
+
+    display:inline-block;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    width:0;
+
+    border-right:3px solid var(--primary);
+
+}
+
+#signature.write{
+
+    animation:
+
+    typing 3s steps(15,end) forwards,
+
+    blink .8s infinite;
+
+}
