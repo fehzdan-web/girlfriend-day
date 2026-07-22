@@ -17,40 +17,37 @@ function initializeGallery() {
 
     if (!gallery) return;
 
-    images.forEach((image, index) => {
+    // Prevent duplicate images if called again
+    gallery.innerHTML = "";
+
+    // Create gallery items
+    images.forEach((src, index) => {
 
         const card = document.createElement("div");
 
         card.className = "gallery-item";
 
         card.innerHTML = `
-            <img
-                src="${image}"
-                alt="Memory ${index + 1}"
-            >
+            <img src="${src}" alt="Memory ${index + 1}">
         `;
 
         gallery.appendChild(card);
 
     });
 
-}
+    // Lightbox elements
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const close = document.getElementById("closeLightbox");
 
-function initializeGallery(){
+    // Add click event to every gallery image
+    const photos = document.querySelectorAll(".gallery-item img");
 
-    const photos=document.querySelectorAll(".gallery img");
+    photos.forEach(photo => {
 
-    const lightbox=document.getElementById("lightbox");
+        photo.addEventListener("click", () => {
 
-    const image=document.getElementById("lightboxImage");
-
-    const close=document.getElementById("closeLightbox");
-
-    photos.forEach(photo=>{
-
-        photo.addEventListener("click",()=>{
-
-            image.src=photo.src;
+            lightboxImage.src = photo.src;
 
             lightbox.classList.add("show");
 
@@ -58,20 +55,30 @@ function initializeGallery(){
 
     });
 
-    close.addEventListener("click",()=>{
+    // Close button
+    if (close) {
 
-        lightbox.classList.remove("show");
-
-    });
-
-    lightbox.addEventListener("click",(e)=>{
-
-        if(e.target===lightbox){
+        close.addEventListener("click", () => {
 
             lightbox.classList.remove("show");
 
-        }
+        });
 
-    });
+    }
+
+    // Click outside image to close
+    if (lightbox) {
+
+        lightbox.addEventListener("click", (e) => {
+
+            if (e.target === lightbox) {
+
+                lightbox.classList.remove("show");
+
+            }
+
+        });
+
+    }
 
 }
